@@ -49,4 +49,4 @@ Os dados neste repositório são **sintéticos** — os valores numéricos foram
 ## Autor
 
 Lucas Zanella — Analista de BI & estudante de Ciência de Dados
-[LinkedIn](#) · [GitHub](https://github.com/lucaszanella00)
+[LinkedIn](www.linkedin.com/in/lucas-zanella-509a89398) · [GitHub](https://github.com/lucaszanella00)
