@@ -1,42 +1,52 @@
-# Fuel Sales BI Pipeline
+# Projeto 10PXP — Pipeline de BI para Rede de Postos de Combustíveis
 
-End-to-end BI project for a network of 10 fuel stations in Brazil.
-Built entirely by me, from raw data extraction to executive dashboard.
+Projeto desenvolvido do início ao fim por mim, de forma independente, para uma rede de 10 postos de combustíveis.
+Abrange desde a extração dos dados no sistema interno até a visualização executiva no Power BI.
 
-## What this project does
+---
 
-- Migrated 1M+ rows of sales data from Excel to PostgreSQL 18
-- Built an incremental load script in Python to append new data monthly
-- Connected Power BI to PostgreSQL and developed an executive dashboard
-- Performed exploratory data analysis (EDA) in Google Colab
+## Como o projeto funciona
 
-## Tech Stack
+---
 
-- **Database:** PostgreSQL 18
-- **ETL:** Python (pandas, SQLAlchemy)
-- **Visualization:** Power BI
-- **EDA:** Python (pandas, matplotlib, seaborn) — Google Colab
+## Stack utilizada
 
-## Pipeline Architecture
-## Dashboard Pages
+- **Banco de dados:** PostgreSQL 18
+- **ETL / Carga:** Python (pandas, SQLAlchemy)
+- **Tratamento:** Microsoft Excel
+- **Visualização:** Power BI
 
-- **General** — Revenue KPIs, weekly/monthly variation, product mix, performance by station
-- **Unidentified Sales** — Analysis of transactions without customer ID (% volume, ticket average, trends)
-- **Price Analysis** — Average fuel price over time (monthly and weekly)
-- **Customer Analysis** — Top customers, retention, ticket segmentation
-- **Risk Analysis** — Anomaly detection and operational risk indicators
+---
 
-## Dataset
+## Dashboard — Páginas
 
-The data in this repository is **synthetic** — numeric values were anonymized using randomized scaling factors per station, and all customer/station names were replaced with generic aliases. The original dataset contains confidential business information and is not publicly available.
+### Geral
+Visão executiva da operação. KPIs de receita total, litros vendidos e variação semanal e mensal. Inclui evolução mensal de receita, mix de combustíveis por receita, receita por posto e receita por base regional.
 
-## Key Results
+### Preço Médio
+Análise de preço médio por litro com toggle entre visão mensal e semanal. Compara o preço praticado para clientes identificados versus clientes sem cadastro, além de calcular o spread(diferença) entre os dois grupos.
 
-- Reduced report generation time from hours (manual Excel) to minutes (automated pipeline)
-- Enabled cross-station performance comparison for 3 regional clusters
-- Identified patterns in unidentified sales representing a significant share of total volume
+### Análise Sem Cliente
+Página dedicada às vendas sem identificação de cliente. KPIs de percentual de transações, volume e receita sem cliente, com comparativo de ticket médio. Detalha o comportamento por combustível, por posto, por mês e por dia da semana — além da evolução semanal do volume de diesel vendido sem cliente.
 
-## Author
+### Análise de Cliente
+Visão individual por cliente com busca interativa. Exibe consumo semanal por cliente (multi-linha), preço médio praticado por semana, mix de combustíveis por litro e participação de volume por posto.
 
-Lucas Zanella — BI Analyst & Data Science student
+### Resultados
+Ranking dos Top 15 clientes por receita, litros vendidos por base regional e variação percentual de volume por posto entre o mês passado e o mês retrasado.
+
+### Análise de Risco
+Monitoramento de churn e risco operacional. Gráfico de dispersão posiciona cada cliente pelo volume da quinzena anterior versus a variação percentual de consumo — identificando visualmente clientes em queda. Complementado por consumo semanal multi-cliente e preço médio semanal.
+
+---
+
+## Sobre os dados
+
+Os dados neste repositório são **sintéticos** — os valores numéricos foram anonimizados com fatores de escala aleatórios por posto e os nomes de clientes e postos foram substituídos por aliases genéricos. O dataset original contém informações confidenciais da empresa e não é de acesso público.
+
+---
+
+## Autor
+
+Lucas Zanella — Analista de BI & estudante de Ciência de Dados
 [LinkedIn](#) · [GitHub](https://github.com/lucaszanella00)
